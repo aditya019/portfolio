@@ -36,7 +36,7 @@ body {
   text-align: center;
 }
 
-/* Name */
+/* Header */
 h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -51,24 +51,76 @@ p {
   margin-bottom: 2rem;
 }
 
-/* Links */
+/* Links container */
 .links {
   display: flex;
+  flex-wrap: wrap;   /* ✅ allows wrapping on small screens */
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
+/* Links base */
 .links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  border: 1px solid #38bdf8;
   border-radius: 999px;
-  color: #38bdf8;
   text-decoration: none;
   transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 
-.links a:hover {
-  background-color: #38bdf8;
+/* Icon size */
+.links a img {
+  width: 20px;
+  height: 20px;
+}
+
+/* GitHub */
+.links a.github {
+  color: #fff;
+  border-color: #fff;
+}
+.links a.github:hover {
+  background: #fff;
   color: #0f172a;
+}
+
+/* LinkedIn */
+.links a.linkedin {
+  color: #0a66c2;
+  border-color: #0a66c2;
+}
+.links a.linkedin:hover {
+  background: #0a66c2;
+  color: #fff;
+}
+
+/* Gmail */
+.links a.gmail {
+  color: #ea4335;
+  border-color: #ea4335;
+}
+.links a.gmail:hover {
+  background: #ea4335;
+  color: #fff;
+}
+
+/* Responsive text */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .links a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
