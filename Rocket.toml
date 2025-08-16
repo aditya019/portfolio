@@ -4,4 +4,3 @@ port = 8000
 
 [release]   # This is what Render will use
 address = "0.0.0.0"  # listen on all interfaces
-port = ${PORT}        # use the environment variable Render sets
