@@ -11,8 +11,11 @@ body, html {
   color: #fff;
 }
 
-h1 {
+h2 {
   font-style: italic;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
 /* Background image */
@@ -26,17 +29,19 @@ body {
 /* Dark overlay for readability */
 .overlay {
   background: rgba(0, 0, 0, 0.6);
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 3rem 1rem;   /* ✅ Adds breathing space top/bottom */
 }
 
 /* Centered container */
 .container {
   max-width: 700px;
-  padding: 2rem;
+  width: 100%;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
@@ -67,13 +72,15 @@ p {
 .links a {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 999px;
   text-decoration: none;
   transition: all 0.3s ease;
   border: 1px solid transparent;
+  min-width: 120px;   /* ✅ prevents buttons from becoming too tiny */
 }
 
 /* Icon size */
@@ -112,19 +119,39 @@ p {
   color: #fff;
 }
 
-/* Responsive text */
-@media (max-width: 480px) {
+/* Responsive adjustments */
+@media (max-width: 768px) {
   h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
-
+  h2 {
+    font-size: 2rem;
+  }
   p {
     font-size: 1rem;
     line-height: 1.5;
   }
+  .container {
+    padding: 1.5rem 1rem;
+  }
+}
 
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+  .links {
+    flex-direction: column;   /* ✅ stack buttons vertically on small screens */
+    gap: 0.8rem;
+  }
   .links a {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
+    width: 100%;             /* ✅ full width buttons for narrow devices */
+    max-width: 250px;
   }
 }
